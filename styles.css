@@ -4,6 +4,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--background-white);
+  box-shadow: var(--shadow-lg);
+  position: absolute;
+  top: 70px; left: 0; right: 0;
+  z-index: 2000;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+}
+.mobile-menu.show { display: flex; }
+@media (min-width: 769px) {
+  .mobile-menu { display: none !important; }
+}
+
 
 :root {
     /* Colors */
