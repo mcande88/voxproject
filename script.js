@@ -107,7 +107,17 @@ function initLanguageSelector() {
         });
     });
 }
+// Mobile menu toggle
+document.getElementById("mobileMenuBtn").addEventListener("click", function() {
+  document.getElementById("mobileMenu").classList.toggle("show");
+});
 
+// Fecha o menu se clicar fora
+document.addEventListener("click", function(e) {
+  if (!e.target.closest('.navbar')) {
+    document.getElementById("mobileMenu").classList.remove("show");
+  }
+});
 // Mobile menu functionality
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
