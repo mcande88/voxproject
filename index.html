@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censere - Turn Every Table into a Customer Feedback Machine</title>
+    <meta name="description" content="FeedbackLoop gives your restaurant a direct, effortless and anonymous feedback channel via QR code. Collect customer feedback, organize suggestions, and improve your business.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📊%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">Censere</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link" data-i18n="nav_features">Features</a>
+                <a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a>
+                <a href="#testimonials" class="nav-link" data-i18n="nav_reviews">Reviews</a>
+                <div class="language-selector">
+                    <button class="language-btn" id="languageBtn">
+                        <span class="flag" id="langFlag">🇬🇧</span>
+                        <span id="langShort">EN</span>
+                        <svg class="chevron" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <a href="#" class="language-option" data-lang="en"><span class="flag">🇬🇧</span> <span>English</span></a>
+                        <a href="#" class="language-option" data-lang="pt-br"><span class="flag">🇧🇷</span> <span>Português (BR)</span></a>
+                        <a href="#" class="language-option" data-lang="pt-pt"><span class="flag">🇵🇹</span> <span>Português (PT)</span></a>
+                        <a href="#" class="language-option" data-lang="es"><span class="flag">🇪🇸</span> <span>Español</span></a>
+                        <a href="#" class="language-option" data-lang="it"><span class="flag">🇮🇹</span> <span>Italiano</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <a href="COLETORREGISTROVOX.html" class="btn-primary" data-i18n="start_trial">Start Free Trial</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-i18n="hero_title">
+                        Turn Every Table into a 
+                        <span class="gradient-text">Customer Feedback Machine</span>
+                    </h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">
+                        FeedbackLoop gives your restaurant a direct, effortless and anonymous feedback channel via QR code. Transform customer insights into actionable improvements.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="COLETORREGISTROVOX.html" class="btn-primary btn-large" data-i18n="start_trial">
+                            Start Free Trial
+                            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#demo" class="btn-secondary btn-large" data-i18n="demo_app">
+                            <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                            </svg>
+                            Demo App
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label" data-i18n="stat_restaurants">Restaurants</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label" data-i18n="stat_feedbacks">Monthly Feedbacks</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label" data-i18n="stat_satisfaction">Satisfaction Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Resto da seção visual igual -->
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="feedback-form">
+                                <div class="form-header">
+                                    <div class="restaurant-logo"></div>
+                                    <h3>Bella Vista Restaurant</h3>
+                                    <p data-i18n="feedback_question">How was your experience?</p>
+                                </div>
+                                <div class="rating-stars">
+                                    <span class="star active">★</span>
+                                    <span class="star active">★</span>
+                                    <span class="star active">★</span>
+                                    <span class="star active">★</span>
+                                    <span class="star active">★</span>
+                                </div>
+                                <div class="feedback-categories">
+                                    <button class="category-btn active" data-i18n="cat_food">Food Quality</button>
+                                    <button class="category-btn" data-i18n="cat_service">Service</button>
+                                    <button class="category-btn" data-i18n="cat_ambiance">Ambiance</button>
+                                </div>
+                                <textarea placeholder="Tell us more about your experience..." data-i18n-placeholder="feedback_placeholder"></textarea>
+                                <button class="submit-btn" data-i18n="submit_feedback">Submit Feedback</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-card card-1">
+                            <div class="card-icon">📊</div>
+                            <div class="card-text" data-i18n="floating_report">Professional Report</div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon">🔔</div>
+                            <div class="card-text" data-i18n="floating_simple">Simple and Effective</div>
+                        </div>
+                        <div class="floating-card card-3">
+                            <div class="card-icon">🌍</div>
+                            <div class="card-text" data-i18n="floating_multi">Multi-language</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="hiw_title">How It Works</h2>
+                <p class="section-subtitle" data-i18n="hiw_subtitle">Three simple steps to start collecting valuable customer feedback</p>
+            </div>
+           <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 7V17C3 18.1046 3.89543 19 5 19H19C20.1046 19 21 18.1046 21 17V7M3 7L12 13L21 7M3 7L12 2L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">1. Customer Scans QR Code</h3>
+                        <p class="step-description" data-i18n="hiw_step1_desc">Place our QR codes on tables, receipts, or anywhere customers can easily access them. No app download required.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">2. Fills Intuitive Form</h3>
+                        <p class="step-description" data-i18n="hiw_step2_desc">Customers complete a beautiful, mobile-optimized feedback form in their preferred language. Takes less than 1 minutes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 19V6L21 12L9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">3. You Get Actionable Data</h3>
+                        <p class="step-description" data-i18n="hiw_step3_desc">Receive monthly reports, organized and analyzed by our expert team, including clear action recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How to Implement in Your Company in 3 Simple Steps</h2>
+                <p class="section-subtitle">Powerful features designed specifically for restaurants and food businesses - Enjoy 2 months free — no credit card required.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Quick Registration</h3>
+                    <p class="feature-description">Fill out our simple registration form with your business name, address, and email. Instantly receive your exclusive, personalized QR code and gain access to monthly reports.
+
+</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 8A6 6 0 0 0 6 8C6 7 9 9 12 13C15 9 18 7 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Display Your QR Code</h3>
+                    <p class="feature-description">Receive your personalized QR code, print it, and display it on tables or at key spots in your business. No technical setup required.
+- No technical setup required.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Receive and Review Your Reports</h3>
+                    <p class="feature-description">Get your first two monthly reports completely free. If you’re not satisfied, simply remove the QR code — no obligations, no hidden fees.</p>
+                  
+                </div>
+
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Trusted by Restaurants Across The World</h2>
+                <p class="section-subtitle">See what our customers are saying about their experience with Censere</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                        <p class="testimonial-text">"We had tried other apps before, but the simplicity of this system makes everything work. Finally, a truly easy way to understand what our customers think. The QR code solution is genius—no downloads, no hassle, just honest feedback."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23667eea'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='20' font-family='Arial'%3EM%3C/text%3E%3C/svg%3E" alt="Marco">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name">Marco Rossi</div>
+                            <div class="author-location">
+                                <span class="flag"></span>
+                                <span>São Paulo - Brazil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                        <p class="testimonial-text">"The feedback collected through the QR codes gave us insights we wouldn’t get otherwise. We improved our service and noticed more satisfied customers in just a few weeks."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23f093fb'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='20' font-family='Arial'%3ES%3C/text%3E%3C/svg%3E" alt="Sophie">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name">Sophie Laurent</div>
+                            <div class="author-location">
+                                <span class="flag"🇷</span>
+                                <span>Paris, France</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <span>★★★★★</span>
+                        </div>
+                        <p class="testimonial-text">"We received valuable feedback, like complaints about beer temperature at specific times. Before, these comments stayed with the staff and we had no way to track recurring issues. Now, we can easily identify and fix problems quickly and efficiently."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2348bb78'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='white' font-size='20' font-family='Arial'%3EJ%3C/text%3E%3C/svg%3E" alt="João">
+                        </div>
+                        <div class="author-info">
+                            <div class="author-name">João Silva</div>
+                            <div class="author-location">
+                                <span class="flag">🇵🇹</span>
+                                <span>Lisbon, Portugal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+               
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="pricing_title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle" data-i18n="pricing_subtitle">Choose the plan that fits your restaurant's needs. All plans include our core features.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name" data-i18n="plan1_name">Starter</h3>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">9</span>
+                            <span class="period" data-i18n="per_month">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="plan1_desc">Perfect for small cafés and bistros</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span data-i18n="plan1_feat1">Up to 100 feedbacks/month</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan1_feat2">Basic dashboard</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan1_feat3">Email alerts</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan1_feat4">2 languages</span>
+                        </div>
+                    </div>
+                    <a href="COLETORREGISTROVOX.html" class="pricing-btn" data-i18n="get_started">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge" data-i18n="popular_badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name" data-i18n="plan2_name">Professional</h3>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">29</span>
+                            <span class="period" data-i18n="per_month">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="plan2_desc">Ideal for busy restaurants</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span data-i18n="plan2_feat1">Up to 1,000 feedbacks/month</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan2_feat2">Advanced analytics</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan2_feat3">Real-time alerts</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan2_feat4">All languages</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan2_feat5">Custom branding</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan2_feat6">Data export</span>
+                        </div>
+                    </div>
+                    <a href="COLETORREGISTROVOX.html" class="pricing-btn" data-i18n="start_trial">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name" data-i18n="plan3_name">Unlimited</h3>
+                        <div class="plan-price">
+                            <span class="currency">€</span>
+                            <span class="amount">49</span>
+                            <span class="period" data-i18n="per_month">/month</span>
+                        </div>
+                        <p class="plan-description" data-i18n="plan3_desc">For restaurant chains and enterprises</p>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">
+                            <span data-i18n="plan3_feat1">Unlimited feedbacks</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan3_feat2">Multiple locations</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan3_feat3">API access</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan3_feat4">Priority support</span>
+                        </div>
+                        <div class="feature">
+                            <span data-i18n="plan3_feat5">Custom integrations</span>
+                        </div>
+                    </div>
+                    <a href="COLETORREGISTROVOX.html" class="pricing-btn" data-i18n="contact_sales">Contact Sales</a>
+                </div>
+            </div>
+            <div class="pricing-footer">
+                <p data-i18n="pricing_footer">All plans include a 14-day free trial. No credit card required.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title" data-i18n="cta_title">Ready to Transform Your Customer Feedback?</h2>
+                <p class="cta-subtitle" data-i18n="cta_subtitle">Join thousands of restaurants already using Censere to improve their customer experience</p>
+                <div class="cta-actions">
+                    <a href="COLETORREGISTROVOX.html" class="btn-primary btn-large" data-i18n="start_trial">Start Free Trial</a>
+                    <a href="COLETORREGISTROVOX.html" class="btn-secondary btn-large" data-i18n="contact_sales">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>by Escudo360</footer>
+
+    <!-- Multi-language script -->
+    <script>
+    const translations = {
+        "en": {
+    nav_features: "Features", nav_pricing: "Pricing", nav_reviews: "Reviews",
+    start_trial: "Start Free Trial", get_started: "Get Started", contact_sales: "Contact Sales",
+    hero_title: 'Turn Every Table into a <span class="gradient-text">Customer Feedback Machine</span>',
+    hero_subtitle: "Censere gives your restaurant a direct, effortless and anonymous feedback channel via QR code. Transform customer insights into actionable improvements.",
+    demo_app: "Demo App", stat_restaurants: "Restaurants", stat_feedbacks: "Monthly Feedbacks", stat_satisfaction: "Satisfaction Rate",
+    feedback_question: "How was your experience?", cat_food: "Food Quality", cat_service: "Service", cat_ambiance: "Ambiance",
+    feedback_placeholder: "Tell us more about your experience...", submit_feedback: "Submit Feedback",
+    floating_report: "Professional Report", floating_simple: "Simple and Effective", floating_multi: "Multi-language",
+    hiw_title: "How It Works", hiw_subtitle: "Three simple steps to start collecting valuable customer feedback",
+    hiw_step1_title: "1. Customer Scans QR Code", hiw_step1_desc: "Place our QR codes on tables, receipts, or anywhere customers can easily access them. No app download required.",
+    hiw_step2_title: "2. Fills Intuitive Form", hiw_step2_desc: "Customers complete a beautiful, mobile-optimized feedback form in their preferred language. Takes less than 1 minutes.",
+    hiw_step3_title: "3. You Get Actionable Data", hiw_step3_desc: "Receive monthly reports, organized and analyzed by our expert team, including clear action recommendations.",
+    features_title: "How to Implement in Your Company in 3 Simple Steps",
+    features_subtitle: "Powerful features designed specifically for restaurants and food businesses - Enjoy 2 months free — no credit card required.",
+    feature1_title: "Quick Registration", feature1_desc: "Fill out our simple registration form with your business name, address, and email. Instantly receive your exclusive, personalized QR code and gain access to monthly reports.",
+    feature2_title: "Display Your QR Code", feature2_desc: "Receive your personalized QR code, print it, and display it on tables or at key spots in your business. No technical setup required.",
+    feature3_title: "Receive and Review Your Reports", feature3_desc: "Get your first two monthly reports completely free. If you’re not satisfied, simply remove the QR code — no obligations, no hidden fees.",
+    testimonials_title: "Trusted by Restaurants Across The World", testimonials_subtitle: "See what our customers are saying about their experience with Censere",
+    testimonial1_text: "We had tried other apps before, but the simplicity of this system makes everything work. Finally, a truly easy way to understand what our customers think. The QR code solution is genius—no downloads, no hassle, just honest feedback.",
+    pricing_title: "Simple, Transparent Pricing", pricing_subtitle: "Choose the plan that fits your restaurant's needs. All plans include our core features.",
+    plan1_name: "Starter", plan1_desc: "Perfect for small cafés and bistros", plan1_feat1: "Up to 100 feedbacks/month", plan1_feat2: "Basic dashboard", plan1_feat3: "Email alerts", plan1_feat4: "2 languages",
+    plan2_name: "Professional", plan2_desc: "Ideal for busy restaurants", plan2_feat1: "Up to 1,000 feedbacks/month", plan2_feat2: "Advanced analytics", plan2_feat3: "Real-time alerts", plan2_feat4: "All languages", plan2_feat5: "Custom branding", plan2_feat6: "Data export",
+    plan3_name: "Unlimited", plan3_desc: "For restaurant chains and enterprises", plan3_feat1: "Unlimited feedbacks", plan3_feat2: "Multiple locations", plan3_feat3: "API access", plan3_feat4: "Priority support", plan3_feat5: "Custom integrations",
+    popular_badge: "Most Popular", per_month: "/month", pricing_footer: "All plans include a 14-day free trial. No credit card required.",
+    cta_title: "Ready to Transform Your Customer Feedback?", cta_subtitle: "Join thousands of restaurants already using Censere to improve their customer experience"
+  },
+  "pt-br": {
+    nav_features: "Recursos", nav_pricing: "Preços", nav_reviews: "Avaliações",
+    start_trial: "Comece o Teste Grátis", get_started: "Começar", contact_sales: "Fale com Vendas",
+    hero_title: 'Transforme cada mesa em uma <span class="gradient-text">máquina de feedback de clientes</span>',
+    hero_subtitle: "O Censere oferece ao seu restaurante um canal direto, fácil e anônimo de feedback via QR code. Transforme opiniões em melhorias práticas.",
+    demo_app: "Ver Demo", stat_restaurants: "Restaurantes", stat_feedbacks: "Feedbacks Mensais", stat_satisfaction: "Índice de Satisfação",
+    feedback_question: "Como foi sua experiência?", cat_food: "Qualidade da Comida", cat_service: "Atendimento", cat_ambiance: "Ambiente",
+    feedback_placeholder: "Conte mais sobre sua experiência...", submit_feedback: "Enviar Feedback",
+    floating_report: "Relatório Profissional", floating_simple: "Simples e Eficaz", floating_multi: "Multilíngue",
+    hiw_title: "Como Funciona", hiw_subtitle: "Três passos simples para começar a coletar feedback valioso",
+    hiw_step1_title: "1. Cliente Escaneia o QR Code", hiw_step1_desc: "Coloque nossos QR codes nas mesas, recibos ou em locais acessíveis. Não precisa baixar aplicativo.",
+    hiw_step2_title: "2. Preenche o Formulário", hiw_step2_desc: "O cliente preenche um formulário bonito e otimizado para celular, no idioma que preferir. Leva menos de 1 minuto.",
+    hiw_step3_title: "3. Você Recebe os Dados", hiw_step3_desc: "Receba relatórios mensais, organizados e analisados pela nossa equipe, com recomendações práticas.",
+    features_title: "Como Implementar na Sua Empresa em 3 Passos",
+    features_subtitle: "Recursos poderosos para restaurantes e negócios de alimentação - Aproveite 2 meses grátis — sem cartão.",
+    feature1_title: "Cadastro Rápido", feature1_desc: "Preencha nosso cadastro simples com nome, endereço e e-mail. Receba na hora seu QR code exclusivo e acesso a relatórios mensais.",
+    feature2_title: "Exponha o QR Code", feature2_desc: "Receba seu QR code personalizado, imprima e coloque nas mesas ou locais estratégicos. Sem configuração técnica.",
+    feature3_title: "Receba Seus Relatórios", feature3_desc: "Ganhe dois meses de relatórios grátis. Se não gostar, é só tirar o QR code — sem compromisso ou taxas.",
+    testimonials_title: "Restaurantes do mundo todo confiam", testimonials_subtitle: "Veja o que dizem sobre a experiência com o Censere",
+    testimonial1_text: "Já testamos outros apps, mas a simplicidade desse sistema faz tudo funcionar. Finalmente uma forma fácil de entender o cliente. O QR code é genial—sem baixar nada, só feedback honesto.",
+    pricing_title: "Preço Justo e Transparente", pricing_subtitle: "Escolha o plano ideal para seu restaurante. Todos incluem nossos recursos principais.",
+    plan1_name: "Starter", plan1_desc: "Para pequenos cafés e bistrôs", plan1_feat1: "Até 100 feedbacks/mês", plan1_feat2: "Dashboard básico", plan1_feat3: "Alertas por e-mail", plan1_feat4: "2 idiomas",
+    plan2_name: "Profissional", plan2_desc: "Ideal para restaurantes movimentados", plan2_feat1: "Até 1.000 feedbacks/mês", plan2_feat2: "Analytics avançado", plan2_feat3: "Alertas em tempo real", plan2_feat4: "Todos os idiomas", plan2_feat5: "Marca personalizada", plan2_feat6: "Exportação de dados",
+    plan3_name: "Ilimitado", plan3_desc: "Para redes e franquias", plan3_feat1: "Feedbacks ilimitados", plan3_feat2: "Várias unidades", plan3_feat3: "Acesso via API", plan3_feat4: "Suporte prioritário", plan3_feat5: "Integrações customizadas",
+    popular_badge: "Mais Popular", per_month: "/mês", pricing_footer: "Todos os planos têm 14 dias grátis. Sem cartão de crédito.",
+    cta_title: "Pronto para transformar o feedback dos seus clientes?", cta_subtitle: "Junte-se a milhares de restaurantes que já usam o Censere"
+  },
+  "pt-pt": {
+    nav_features: "Funcionalidades", nav_pricing: "Preços", nav_reviews: "Testemunhos",
+    start_trial: "Iniciar Período Grátis", get_started: "Começar", contact_sales: "Contactar Vendas",
+    hero_title: 'Transforme cada mesa numa <span class="gradient-text">máquina de feedback de clientes</span>',
+    hero_subtitle: "O Censere oferece ao seu restaurante um canal direto, simples e anónimo de feedback via QR code. Transforme opiniões em melhorias práticas.",
+    demo_app: "Ver Demo", stat_restaurants: "Restaurantes", stat_feedbacks: "Feedbacks Mensais", stat_satisfaction: "Taxa de Satisfação",
+    feedback_question: "Como foi a sua experiência?", cat_food: "Qualidade da Comida", cat_service: "Serviço", cat_ambiance: "Ambiente",
+    feedback_placeholder: "Conte-nos mais sobre a sua experiência...", submit_feedback: "Enviar Feedback",
+    floating_report: "Relatório Profissional", floating_simple: "Simples e Eficaz", floating_multi: "Multilíngue",
+    hiw_title: "Como Funciona", hiw_subtitle: "Três passos simples para começar a recolher feedback valioso",
+    hiw_step1_title: "1. Cliente Lê o QR Code", hiw_step1_desc: "Coloque os nossos QR codes nas mesas, faturas ou locais acessíveis. Não precisa de app.",
+    hiw_step2_title: "2. Preenche o Formulário", hiw_step2_desc: "O cliente preenche um formulário bonito, otimizado para telemóvel, no idioma que preferir. Demora menos de 1 minuto.",
+    hiw_step3_title: "3. Recebe Dados Acionáveis", hiw_step3_desc: "Receba relatórios mensais, organizados e analisados pela nossa equipa, com recomendações práticas.",
+    features_title: "Como Implementar na Sua Empresa em 3 Passos",
+    features_subtitle: "Funcionalidades poderosas para restauração - Aproveite 2 meses grátis — sem cartão.",
+    feature1_title: "Registo Rápido", feature1_desc: "Preencha o registo simples com nome, endereço e e-mail. Receba de imediato o seu QR code exclusivo e acesso aos relatórios mensais.",
+    feature2_title: "Exiba o QR Code", feature2_desc: "Receba o QR code personalizado, imprima e coloque nas mesas ou locais estratégicos. Sem configurações técnicas.",
+    feature3_title: "Receba os Relatórios", feature3_desc: "Receba os primeiros dois relatórios mensais totalmente grátis. Se não gostar, basta remover o QR code — sem compromissos ou custos.",
+    testimonials_title: "Restaurantes confiam em nós", testimonials_subtitle: "Veja o que dizem os nossos clientes sobre o Censere",
+    testimonial1_text: "Testámos outras soluções, mas a simplicidade deste sistema faz toda a diferença. Finalmente, um método fácil para perceber o cliente. QR code é genial—sem downloads, só feedback honesto.",
+    pricing_title: "Preços Simples e Transparentes", pricing_subtitle: "Escolha o plano para o seu restaurante. Todos incluem as funcionalidades principais.",
+    plan1_name: "Starter", plan1_desc: "Ideal para cafés e bistrôs", plan1_feat1: "Até 100 feedbacks/mês", plan1_feat2: "Dashboard básico", plan1_feat3: "Alertas por email", plan1_feat4: "2 idiomas",
+    plan2_name: "Profissional", plan2_desc: "Ideal para restaurantes com movimento", plan2_feat1: "Até 1.000 feedbacks/mês", plan2_feat2: "Analytics avançado", plan2_feat3: "Alertas em tempo real", plan2_feat4: "Todos os idiomas", plan2_feat5: "Marca personalizada", plan2_feat6: "Exportação de dados",
+    plan3_name: "Ilimitado", plan3_desc: "Para cadeias e grupos", plan3_feat1: "Feedbacks ilimitados", plan3_feat2: "Várias localizações", plan3_feat3: "Acesso API", plan3_feat4: "Suporte prioritário", plan3_feat5: "Integrações personalizadas",
+    popular_badge: "Mais Popular", per_month: "/mês", pricing_footer: "Todos os planos incluem 14 dias grátis. Sem cartão.",
+    cta_title: "Pronto para transformar o feedback dos seus clientes?", cta_subtitle: "Junte-se a milhares de restaurantes que já usam o Censere"
+  },
+  "es": {
+    nav_features: "Características", nav_pricing: "Precios", nav_reviews: "Opiniones",
+    start_trial: "Empezar Prueba Gratis", get_started: "Empezar", contact_sales: "Contactar Ventas",
+    hero_title: 'Convierte cada mesa en una <span class="gradient-text">máquina de feedback de clientes</span>',
+    hero_subtitle: "Censere ofrece a tu restaurante un canal directo, sencillo y anónimo de feedback a través de código QR. Convierte las opiniones en mejoras prácticas.",
+    demo_app: "Demo App", stat_restaurants: "Restaurantes", stat_feedbacks: "Feedbacks Mensuales", stat_satisfaction: "Índice de Satisfacción",
+    feedback_question: "¿Cómo fue tu experiencia?", cat_food: "Calidad de la Comida", cat_service: "Servicio", cat_ambiance: "Ambiente",
+    feedback_placeholder: "Cuéntanos más sobre tu experiencia...", submit_feedback: "Enviar Feedback",
+    floating_report: "Informe Profesional", floating_simple: "Simple y Eficaz", floating_multi: "Multi-idioma",
+    hiw_title: "Cómo Funciona", hiw_subtitle: "Tres pasos simples para comenzar a recolectar feedback valioso",
+    hiw_step1_title: "1. El Cliente Escanea el QR", hiw_step1_desc: "Coloca nuestros códigos QR en las mesas, recibos o en cualquier lugar accesible. Sin descargar apps.",
+    hiw_step2_title: "2. Rellena el Formulario", hiw_step2_desc: "El cliente completa un formulario bonito, optimizado para móvil, en el idioma que prefiera. Toma menos de 1 minuto.",
+    hiw_step3_title: "3. Recibes Datos Útiles", hiw_step3_desc: "Recibe reportes mensuales, organizados y analizados por nuestro equipo, con recomendaciones prácticas.",
+    features_title: "Implementa en tu Negocio en 3 Pasos",
+    features_subtitle: "Potentes características para restaurantes - Disfruta 2 meses gratis — sin tarjeta.",
+    feature1_title: "Registro Rápido", feature1_desc: "Completa el registro simple con nombre, dirección y email. Recibe tu QR exclusivo y acceso a los reportes mensuales al instante.",
+    feature2_title: "Exhibe el QR Code", feature2_desc: "Recibe tu QR personalizado, imprímelo y colócalo en las mesas o lugares clave. Sin configuración técnica.",
+    feature3_title: "Recibe tus Reportes", feature3_desc: "Disfruta dos meses de reportes gratis. Si no te gusta, solo quita el QR — sin compromiso.",
+    testimonials_title: "Restaurantes de todo el mundo confían", testimonials_subtitle: "Mira lo que dicen nuestros clientes sobre Censere",
+    testimonial1_text: "Hemos probado otras apps, pero la simplicidad de este sistema hace que todo funcione. Por fin una manera fácil de entender al cliente. El QR code es genial—sin descargas, solo feedback honesto.",
+    pricing_title: "Precios Claros y Transparentes", pricing_subtitle: "Elige el plan ideal para tu restaurante. Todos incluyen nuestras funciones principales.",
+    plan1_name: "Starter", plan1_desc: "Perfecto para cafés y bistrós", plan1_feat1: "Hasta 100 feedbacks/mes", plan1_feat2: "Panel básico", plan1_feat3: "Alertas por email", plan1_feat4: "2 idiomas",
+    plan2_name: "Profesional", plan2_desc: "Ideal para restaurantes con movimiento", plan2_feat1: "Hasta 1.000 feedbacks/mes", plan2_feat2: "Análisis avanzado", plan2_feat3: "Alertas en tiempo real", plan2_feat4: "Todos los idiomas", plan2_feat5: "Marca personalizada", plan2_feat6: "Exportación de datos",
+    plan3_name: "Ilimitado", plan3_desc: "Para cadenas y franquicias", plan3_feat1: "Feedbacks ilimitados", plan3_feat2: "Múltiples ubicaciones", plan3_feat3: "Acceso API", plan3_feat4: "Soporte prioritario", plan3_feat5: "Integraciones personalizadas",
+    popular_badge: "Más Popular", per_month: "/mes", pricing_footer: "Todos los planes incluyen 14 días gratis. Sin tarjeta.",
+    cta_title: "¿Listo para transformar el feedback de tus clientes?", cta_subtitle: "Únete a miles de restaurantes que ya usan Censere"
+  },
+  "it": {
+    nav_features: "Funzionalità", nav_pricing: "Prezzi", nav_reviews: "Recensioni",
+    start_trial: "Prova Gratis", get_started: "Inizia", contact_sales: "Contatta Vendite",
+    hero_title: 'Trasforma ogni tavolo in una <span class="gradient-text">macchina di feedback dei clienti</span>',
+    hero_subtitle: "Censere offre al tuo ristorante un canale diretto, semplice e anonimo di feedback tramite QR code. Trasforma le opinioni in miglioramenti concreti.",
+    demo_app: "Demo App", stat_restaurants: "Ristoranti", stat_feedbacks: "Feedback Mensili", stat_satisfaction: "Tasso di Soddisfazione",
+    feedback_question: "Com’è stata la tua esperienza?", cat_food: "Qualità del Cibo", cat_service: "Servizio", cat_ambiance: "Ambiente",
+    feedback_placeholder: "Raccontaci di più sulla tua esperienza...", submit_feedback: "Invia Feedback",
+    floating_report: "Report Professionale", floating_simple: "Semplice ed Efficace", floating_multi: "Multi-lingua",
+    hiw_title: "Come Funziona", hiw_subtitle: "Tre semplici passi per raccogliere feedback preziosi",
+    hiw_step1_title: "1. Il Cliente Scansiona il QR", hiw_step1_desc: "Posiziona i nostri QR code sui tavoli, scontrini o dove vuoi. Nessun download necessario.",
+    hiw_step2_title: "2. Compila il Modulo", hiw_step2_desc: "Il cliente compila un modulo bello e ottimizzato per mobile, nella lingua preferita. Ci vuole meno di 1 minuto.",
+    hiw_step3_title: "3. Ricevi Dati Azionabili", hiw_step3_desc: "Ricevi report mensili, organizzati e analizzati dal nostro team, con consigli pratici.",
+    features_title: "Implementa nella Tua Attività in 3 Passi",
+    features_subtitle: "Funzionalità potenti pensate per la ristorazione - 2 mesi gratis — nessuna carta richiesta.",
+    feature1_title: "Registrazione Rapida", feature1_desc: "Compila il modulo con nome, indirizzo e email. Ricevi subito il tuo QR esclusivo e accedi ai report mensili.",
+    feature2_title: "Esporre il QR Code", feature2_desc: "Ricevi il QR code personalizzato, stampalo ed esponilo sui tavoli o punti strategici. Nessuna configurazione tecnica.",
+    feature3_title: "Ricevi i Report", feature3_desc: "Ottieni i primi due report mensili completamente gratis. Se non sei soddisfatto, rimuovi il QR code — nessun obbligo, nessun costo.",
+    testimonials_title: "Ristoranti da tutto il mondo si fidano", testimonials_subtitle: "Ecco cosa dicono i nostri clienti su Censere",
+    testimonial1_text: "Abbiamo provato altre app, ma la semplicità di questo sistema fa funzionare tutto. Finalmente un modo facile per capire i clienti. Il QR code è geniale—niente download, solo feedback onesto.",
+    pricing_title: "Prezzi Chiari e Trasparenti", pricing_subtitle: "Scegli il piano ideale. Tutti includono le funzionalità principali.",
+    plan1_name: "Starter", plan1_desc: "Perfetto per caffè e bistrot", plan1_feat1: "Fino a 100 feedback/mese", plan1_feat2: "Dashboard base", plan1_feat3: "Avvisi email", plan1_feat4: "2 lingue",
+    plan2_name: "Professionale", plan2_desc: "Ideale per ristoranti affollati", plan2_feat1: "Fino a 1.000 feedback/mese", plan2_feat2: "Analisi avanzate", plan2_feat3: "Avvisi in tempo reale", plan2_feat4: "Tutte le lingue", plan2_feat5: "Brand personalizzato", plan2_feat6: "Esportazione dati",
+    plan3_name: "Illimitato", plan3_desc: "Per catene e grandi gruppi", plan3_feat1: "Feedback illimitati", plan3_feat2: "Più sedi", plan3_feat3: "Accesso API", plan3_feat4: "Supporto prioritario", plan3_feat5: "Integrazioni personalizzate",
+    popular_badge: "Più Popolare", per_month: "/mese", pricing_footer: "Tutti i piani hanno 14 giorni gratis. Nessuna carta di credito.",
+    cta_title: "Pronto a trasformare il feedback dei tuoi clienti?", cta_subtitle: "Unisciti a migliaia di ristoranti che già usano Censere"
+          },
+        // Complete com pt-pt, es, it se desejar...
+    };
+
+    const flags = { "en": "🇬🇧", "pt-br": "🇧🇷", "pt-pt": "🇵🇹", "es": "🇪🇸", "it": "🇮🇹" };
+    const langShort = { "en": "EN", "pt-br": "BR", "pt-pt": "PT", "es": "ES", "it": "IT" };
+
+    function setLanguage(lang) {
+        localStorage.setItem("censereLang", lang);
+        document.querySelectorAll("[data-i18n]").forEach(el => {
+            let key = el.getAttribute("data-i18n");
+            let html = translations[lang][key];
+            if (html) el.innerHTML = html;
+        });
+        // Placeholders
+        document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+            let k = el.getAttribute("data-i18n-placeholder");
+            let ph = translations[lang][k];
+            if(ph) el.setAttribute("placeholder",ph);
+        });
+        document.getElementById("langFlag").textContent = flags[lang];
+        document.getElementById("langShort").textContent = langShort[lang];
+    }
+
+    document.querySelectorAll(".language-option").forEach(opt => {
+        opt.addEventListener("click", function(e) {
+            e.preventDefault();
+            let lang = opt.getAttribute("data-lang");
+            setLanguage(lang);
+        });
+    });
+
+    document.getElementById("languageBtn").addEventListener("click", function(e){
+        document.getElementById("languageDropdown").classList.toggle("show");
+    });
+
+    document.addEventListener("DOMContentLoaded", function(){
+        let lang = localStorage.getItem("censereLang") || "en";
+        setLanguage(lang);
+    });
+
+    document.addEventListener("click", function(e){
+        if (!e.target.closest('.language-selector')) {
+            document.getElementById("languageDropdown").classList.remove("show");
+        }
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
